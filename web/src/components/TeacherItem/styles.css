@@ -23,21 +23,22 @@
 }
 
 .teacher-item header div strong {
-    font: 700 2.4rem Archivo;
+    font: 700 2.3rem Archivo;
     display: block;
     color: var(--color-text-title);
 }
 
 .teacher-item header div span {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     display: block;
     margin-top: 0.4rem;
 }
 
 .teacher-item > p {
     padding: 0 2rem;
-    font-size: 1.6rem;
+    font-size: 1.85rem;
     line-height: 2.8rem;
+    text-align: justify;
 }
 
 .teacher-item footer {

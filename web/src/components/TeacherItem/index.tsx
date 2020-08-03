@@ -13,7 +13,8 @@ function TeacherItem() {
                 alt="Anderson Games"
             />
             <div>
-                <strong>Programação Front-End</strong>
+                <strong>Anderson Games</strong>
+                <span>Programação Front-End</span>
             </div>
         </header>
 

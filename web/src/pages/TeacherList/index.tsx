@@ -29,6 +29,10 @@ function TeacherList() {
 
             <main>
                 <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
+                <TeacherItem />
             </main>
         </div>
     );
