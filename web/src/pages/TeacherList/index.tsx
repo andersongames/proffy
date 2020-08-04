@@ -17,12 +17,12 @@ function TeacherList() {
 
                     <div className="input-block">
                         <label htmlFor="week_day">Dia da semana</label>
-                        <input type="text" id="week_day" />
+                        <input type="date" id="week_day" />
                     </div>
 
                     <div className="input-block">
                         <label htmlFor="time">Horário</label>
-                        <input type="text" id="time" />
+                        <input type="time" id="time" />
                     </div>
                 </form>
             </PageHeader>
