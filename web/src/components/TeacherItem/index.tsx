@@ -4,30 +4,40 @@ import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
 import './styles.css';
 
-function TeacherItem() {
+export interface Teacher {
+    id: number;
+    avatar: string;
+    bio: string;
+    cost: number;
+    name: string;
+    subject: string;
+    whatsapp: string;
+}
+
+interface TeacherItemProps {
+    classInfo: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ classInfo }) => {
     return (
         <article className="teacher-item">
         <header>
             <img
-                src="https://avatars1.githubusercontent.com/u/59886134?s=460&u=407d7ce9969c7946d43fe6cbbda7f84c92589da5&v=4"
-                alt="Anderson Games"
+                src={classInfo.avatar}
+                alt={classInfo.name}
             />
             <div>
-                <strong>Anderson Games</strong>
-                <span>Programação Front-End</span>
+                <strong>{classInfo.name}</strong>
+                <span>{classInfo.subject}</span>
             </div>
         </header>
 
-        <p>
-        Estudando com o objetivo de ser desenvolvedor web.
-        <br /><br />
-        Estou no quarto semestre da faculdade de análise e desenvolvimento de sistemas e já possuo conhecimento básico e prático em HTML, CSS, JavaScript e MySQL.
-        </p>
+        <p>{classInfo.bio}</p>
 
         <footer>
             <p>
                 Preço/Hora
-                <strong>R$ 80,00</strong>
+                <strong>R$ {classInfo.cost}</strong>
             </p>
             <button type="button">
                 <img src={whatsappIcon} alt="Whatsapp"/>
