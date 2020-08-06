@@ -30,6 +30,18 @@ function TeacherList() {
         setTeachers(response.data);
     }
 
+    async function partialSearch(e: string) {
+        const response = await api.get('classes', {
+            params: {
+                subject,
+                week_day,
+                time,
+            }
+        });
+
+        setTeachers(response.data);
+    }
+
     return (
         <div id="page-teacher-list" className="container">
             <PageHeader title='Estes são os proffys disponíveis'>
@@ -38,7 +50,10 @@ function TeacherList() {
                         name='subject'
                         label='Matéria'
                         value={subject}
-                        onChange={e => setSubject(e.target.value)}
+                        onChange={e => {
+                            setSubject(e.target.value)
+                            partialSearch(e.target.value);
+                        }}
                         options={[
                             { value: 'Artes', label: 'Artes' },
                             { value: 'Biologia', label: 'Biologia' },
