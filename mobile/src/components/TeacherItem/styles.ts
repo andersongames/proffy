@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Archivo_700Bold',
         color: '#32264D',
         fontSize: 20,
+        maxWidth: 210,
     },
 
     subject: {
