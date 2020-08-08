@@ -60,6 +60,10 @@
     color: var(--color-text-complement);
 }
 
+#page-teacher-form main .schedule-item + .schedule-item {
+    margin-top: 4.8rem;
+}
+
 #page-teacher-form main footer {
     padding: 4rem 2.4rem;
     background-color: var(--color-box-footer);
@@ -112,6 +116,13 @@
 
     #page-teacher-form main fieldset {
         padding: 0 6.4rem;
+    }
+
+    #page-teacher-form main fieldset legend .buttons {
+        width: 20rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     #page-teacher-form main .schedule-item {

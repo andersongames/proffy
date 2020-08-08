@@ -31,7 +31,23 @@ function TeacherForm() {
         setScheduleItems([
             ...scheduleItems,
             { week_day: '0', from: '', to: '' }
-        ])
+        ]);
+        console.log(scheduleItems.length);
+    }
+
+    function handleRemoveOrClearScheduleItem() {
+        if (scheduleItems.length === 1) {
+            setScheduleItems([
+                { week_day: '0', from: '', to: '' }
+            ]);
+            console.log(scheduleItems.length);
+        } else {
+            scheduleItems.pop();
+            setScheduleItems([
+                ...scheduleItems
+            ])
+            console.log(scheduleItems.length);
+        }
     }
 
     function setScheduleItemValue(position: number, field: string, value: string) {
@@ -146,14 +162,20 @@ function TeacherForm() {
                     <fieldset>
                         <legend>
                             Horários disponíveis
-              <button type="button" onClick={addNewScheduleItem}>
-                                + Novo horário
-              </button>
+                            <div className="buttons">
+                                <button type="button" onClick={addNewScheduleItem}>
+                                    + Adicionar
+                                </button>
+
+                                <button type="button" onClick={handleRemoveOrClearScheduleItem}>
+                                    - Remover
+                                </button>
+                            </div>
                         </legend>
 
                         {scheduleItems.map((scheduleItem, index) => {
                             return (
-                                <div key={scheduleItem.week_day} className="schedule-item">
+                                <div key={`${scheduleItem.week_day} + ${Math.round(Math.random() * 50)}`} className="schedule-item">
                                     <Select
                                         name="week_day"
                                         label="Dia da semana"
