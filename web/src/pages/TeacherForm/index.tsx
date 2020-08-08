@@ -34,6 +34,7 @@ function TeacherForm() {
         ]);
     }
 
+
     function setScheduleItemValue(position: number, field: string, value: string) {
         const updatedScheduleItem = scheduleItems.map((scheduleItem, index) => {
             if (index === position) {
@@ -170,6 +171,10 @@ function TeacherForm() {
                                         type="time"
                                         onChange={e => setScheduleItemValue(index, 'to', e.target.value)}
                                     />
+                                    <button type="button">
+                                        <p className="desktop">X</p>
+                                        <p className="mobile">Limpar/Remover</p>
+                                    </button>
                                 </div>
                             );
                         })}
